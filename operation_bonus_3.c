@@ -6,11 +6,11 @@
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 23:34:29 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/07 01:02:23 by abelqasm         ###   ########.fr       */
+/*   Updated: 2022/03/09 21:16:17 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 void	ft_lst_del_last(t_list **list)
 {

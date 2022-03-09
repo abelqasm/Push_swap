@@ -6,14 +6,19 @@
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:08:38 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/06 23:11:13 by abelqasm         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:57:53 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static long	check(unsigned long nb, int signe)
+static long	check(long nb, int signe)
 {
+	if (nb > 2147483647 || nb < -2147483648)
+	{
+		write(1, "Error\n", 6);
+		exit(0);
+	}
 	if (nb <= 9223372036854775807)
 		return (nb * signe);
 	if (signe > 0)
@@ -23,9 +28,9 @@ static long	check(unsigned long nb, int signe)
 
 int	ft_atoi(const char *str)
 {
-	unsigned long	nb;
-	int				signe;
-	int				i;
+	long	nb;
+	int		signe;
+	int		i;
 
 	nb = 0;
 	signe = 1;

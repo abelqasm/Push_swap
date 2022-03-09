@@ -7,6 +7,7 @@ SRCS =	push_swap.c \
 		ft_push_to_a.c \
 		ft_push_to_b.c \
 		ft_bubble_sort.c \
+		ft_split.c \
 		./srcs/ft_add_front_ls.c \
 		./srcs/ft_add_lst.c \
 		./srcs/ft_lst_check_index.c \
@@ -20,8 +21,9 @@ SRCS =	push_swap.c \
 
 SRCS_B = ./get_next_line/get_next_line_utils.c \
 		./get_next_line/get_next_line.c \
-		checker.c \
-		ft_moves.c \
+		checker_bonus.c \
+		ft_moves_bonus.c \
+		ft_split.c \
 		./srcs/ft_add_front_ls.c \
 		./srcs/ft_lstnew.c \
 		./srcs/ft_add_lst.c \
@@ -33,7 +35,7 @@ SRCS_B = ./get_next_line/get_next_line_utils.c \
 		operation_bonus_1.c \
 		operation_bonus_2.c \
 		operation_bonus_3.c \
-		ft_check_sort.c
+		ft_check_sort_bonus.c
 
 CC = cc 
 

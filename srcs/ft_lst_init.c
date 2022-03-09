@@ -6,11 +6,24 @@
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:28:03 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/07 01:23:34 by abelqasm         ###   ########.fr       */
+/*   Updated: 2022/03/09 23:03:30 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	ft_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
 
 static void	ft_check_sort(t_list **list)
 {
@@ -30,17 +43,26 @@ void	ft_lst_init(int argc, char **argv, t_list **list)
 {
 	t_list	*node;
 	int		i;
+	int		j;
+	char	**str;
 
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_check(list, ft_atoi(argv[i])) || ft_check_number(argv[i]))
+		j = 0;
+		str = ft_split(argv[i], ' ');
+		while (str[j])
 		{
-			write(1, "Error\n", 6);
-			exit(0);
+			if (ft_check(list, ft_atoi(str[j])) || ft_check_number(str[j]))
+			{
+				write(1, "Error\n", 6);
+				exit(0);
+			}
+			node = ft_lstnew(ft_atoi(str[j]));
+			ft_add_lst(list, node);
+			j++;
 		}
-		node = ft_lstnew(ft_atoi(argv[i]));
-		ft_add_lst(list, node);
+		ft_free(str);
 		i++;
 	}
 	ft_check_sort(list);

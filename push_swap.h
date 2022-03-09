@@ -6,7 +6,7 @@
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:16:45 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/07 01:41:25 by abelqasm         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:15:07 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void		ft_change_b_2(t_list **list);
 int			ft_strlen_moves(char *str);
 void		sort3_for_a(t_list **list);
 void		sort3_for_b(t_list **list);
+char		**ft_split(char const *s, char c);
 
 #endif

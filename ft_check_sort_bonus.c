@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_check_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 17:15:22 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/09 22:54:18 by abelqasm         ###   ########.fr       */
+/*   Created: 2022/03/06 22:39:51 by abelqasm          #+#    #+#             */
+/*   Updated: 2022/03/09 21:16:48 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-int	main(int argc, char **argv)
+int	ft_check_sort(t_list *list)
 {
-	t_list	*list_a;
-	t_list	*list_b;
-	t_sort	*sort;
+	t_list	*ptr;
 
-	if (argc < 2)
-		return (0);
-	sort = malloc(sizeof(t_sort));
-	if (!sort)
-		return (0);
-	list_b = NULL;
-	ft_lst_init(argc, argv, &list_a);
-	sort->tab = ft_bubble_sort(list_a, 0, 0);
-	ft_push(&list_a, &list_b, sort);
-	return (0);
+	ptr = list;
+	while (ptr->next)
+	{
+		if (ptr->data > ptr->next->data)
+			return (0);
+		ptr = ptr->next;
+	}
+	return (1);
 }

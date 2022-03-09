@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 17:15:22 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/09 22:54:18 by abelqasm         ###   ########.fr       */
+/*   Created: 2022/03/06 21:35:36 by abelqasm          #+#    #+#             */
+/*   Updated: 2022/03/09 21:16:03 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 int	main(int argc, char **argv)
 {
 	t_list	*list_a;
 	t_list	*list_b;
-	t_sort	*sort;
+	char	*moves;
 
 	if (argc < 2)
 		return (0);
-	sort = malloc(sizeof(t_sort));
-	if (!sort)
-		return (0);
 	list_b = NULL;
 	ft_lst_init(argc, argv, &list_a);
-	sort->tab = ft_bubble_sort(list_a, 0, 0);
-	ft_push(&list_a, &list_b, sort);
+	moves = get_next_line(0);
+	while (moves)
+	{
+		ft_moves(&list_a, &list_b, moves);
+		free(moves);
+		moves = get_next_line(0);
+	}
+	if (ft_check_sort(list_a) == 1)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
 	return (0);
 }

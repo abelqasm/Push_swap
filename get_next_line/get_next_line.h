@@ -6,7 +6,7 @@
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:27:56 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/06 22:13:57 by abelqasm         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:55:12 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "../checker.h"
+# include "../checker_bonus.h"
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);

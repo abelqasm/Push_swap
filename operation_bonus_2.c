@@ -6,11 +6,11 @@
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 23:34:21 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/07 01:01:55 by abelqasm         ###   ########.fr       */
+/*   Updated: 2022/03/09 21:16:13 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 void	ft_ra(t_list **list_a)
 {
