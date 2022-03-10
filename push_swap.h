@@ -6,7 +6,7 @@
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:16:45 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/09 22:15:07 by abelqasm         ###   ########.fr       */
+/*   Updated: 2022/03/10 01:32:10 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_sort
 }	t_sort;
 t_list		*ft_lstnew(int data);
 t_list		*ft_lstlast(t_list *list);
-void		ft_lst_init(int argc, char **argv, t_list **list);
+int			ft_lst_init(int argc, char **argv, t_list **list);
 int			ft_atoi(const char *str);
 int			ft_lst_index(t_list *list);
 int			ft_lst_size(t_list *list);

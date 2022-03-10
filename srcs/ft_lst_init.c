@@ -6,7 +6,7 @@
 /*   By: abelqasm <abelqasm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:28:03 by abelqasm          #+#    #+#             */
-/*   Updated: 2022/03/09 23:03:30 by abelqasm         ###   ########.fr       */
+/*   Updated: 2022/03/10 01:31:57 by abelqasm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_free(char **str)
 	free(str);
 }
 
-static void	ft_check_sort(t_list **list)
+static int	ft_check_sort(t_list **list)
 {
 	t_list	*ptr;
 
@@ -33,13 +33,13 @@ static void	ft_check_sort(t_list **list)
 	while (ptr)
 	{
 		if (ptr->next && ptr->data > ptr->next->data)
-			return ;
+			return (1);
 		ptr = ptr->next;
 	}
-	exit(0);
+	return (0);
 }
 
-void	ft_lst_init(int argc, char **argv, t_list **list)
+int	ft_lst_init(int argc, char **argv, t_list **list)
 {
 	t_list	*node;
 	int		i;
@@ -65,5 +65,5 @@ void	ft_lst_init(int argc, char **argv, t_list **list)
 		ft_free(str);
 		i++;
 	}
-	ft_check_sort(list);
+	return (ft_check_sort(list));
 }
