@@ -55,9 +55,13 @@ bonus : $(BONUS)
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	rm -rf *.o
+	rm -rf srcs/*.o
+	rm -rf get_next_line/*.o
 
 $(BONUS) : $(OBJS_B)
 	$(CC) $(CFLAGS) $(OBJS_B) -o $(BONUS)
+	make clean
 
 clean :
 	rm -rf *.o
