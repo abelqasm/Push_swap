@@ -1,41 +1,41 @@
-SRCS =	push_swap.c \
-		operation_1.c \
-		operation_2.c \
-		operation_3.c \
-		ft_push.c \
-		ft_sort3.c \
-		ft_push_to_a.c \
-		ft_push_to_b.c \
-		ft_bubble_sort.c \
-		ft_split.c \
-		./srcs/ft_add_front_ls.c \
-		./srcs/ft_add_lst.c \
-		./srcs/ft_lst_check_index.c \
-		./srcs/ft_lst_size.c \
-		./srcs/ft_lstlast.c \
-		./srcs/ft_lstnew.c \
-		./srcs/ft_lst_init.c \
-		./srcs/ft_print_ls.c \
-		./srcs/ft_utils.c \
-		./srcs/ft_utils_2.c
+SRCS =	./Mandatory/push_swap.c \
+		./Mandatory/operation_1.c \
+		./Mandatory/operation_2.c \
+		./Mandatory/operation_3.c \
+		./Mandatory/ft_push.c \
+		./Mandatory/ft_sort3.c \
+		./Mandatory/ft_push_to_a.c \
+		./Mandatory/ft_push_to_b.c \
+		./Mandatory/ft_bubble_sort.c \
+		./utils/ft_split.c \
+		./utils/ft_add_front_ls.c \
+		./utils/ft_add_lst.c \
+		./utils/ft_lst_check_index.c \
+		./utils/ft_lst_size.c \
+		./utils/ft_lstlast.c \
+		./utils/ft_lstnew.c \
+		./utils/ft_lst_init.c \
+		./utils/ft_print_ls.c \
+		./utils/ft_utils.c \
+		./utils/ft_utils_2.c
 
 SRCS_B = ./get_next_line/get_next_line_utils.c \
 		./get_next_line/get_next_line.c \
-		checker_bonus.c \
-		ft_moves_bonus.c \
-		ft_split.c \
-		./srcs/ft_add_front_ls.c \
-		./srcs/ft_lstnew.c \
-		./srcs/ft_add_lst.c \
-		./srcs/ft_lst_init.c \
-		./srcs/ft_lst_check_index.c \
-		./srcs/ft_lstlast.c \
-		./srcs/ft_utils.c \
-		./srcs/ft_lst_size.c \
-		operation_bonus_1.c \
-		operation_bonus_2.c \
-		operation_bonus_3.c \
-		ft_check_sort_bonus.c
+		./Bonus/checker_bonus.c \
+		./Bonus/ft_moves_bonus.c \
+		./utils/ft_split.c \
+		./utils/ft_add_front_ls.c \
+		./utils/ft_lstnew.c \
+		./utils/ft_add_lst.c \
+		./utils/ft_lst_init.c \
+		./utils/ft_lst_check_index.c \
+		./utils/ft_lstlast.c \
+		./utils/ft_utils.c \
+		./utils/ft_lst_size.c \
+		./Bonus/operation_bonus_1.c \
+		./Bonus/operation_bonus_2.c \
+		./Bonus/operation_bonus_3.c \
+		./Bonus/ft_check_sort_bonus.c
 
 CC = cc 
 
@@ -61,11 +61,11 @@ $(BONUS) : $(OBJS_B)
 	make clean
 
 clean :
-	rm -rf *.o
-	rm -rf srcs/*.o
+	rm -rf Bonus/*.o Mandatory/*.o
+	rm -rf utils/*.o
 	rm -rf get_next_line/*.o
 
 fclean : clean
 	rm -f $(NAME) $(BONUS)
 
-re : fclean all
+re : fclean all bonus
